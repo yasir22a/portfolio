@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohd Yasir | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="floating-bg"></div>
+  <div class="emoji-cloud">🌟 🎈 💡 🤖 🎯</div>
+
+  <header class="hero">
+    <img src="images/profile.jpg.png" alt="Profile Photo"
+     class="profile-pic animated-glow"
+     onclick="openProfileModal()" style="cursor: pointer;">
+    <h1 class="title">Mohd Yasir</h1>
+    <p class="subtitle"><span id="typed-text"></span><span class="cursor">|</span></p>
+    <p class="quote">"Engineering is the art of turning dreams into machines." 🛠️</p>
+    <a href="assets/Mohd_Yasir_CV.pdf" download class="btn download-btn">
+  <span>📄 Download CV</span>
+</a>
+    <nav class="navbar">
+      <a href="#about">🙋 About</a>
+      <a href="#why">🔧 Why Mechatronics</a>
+      <a href="#projects">💼 Projects</a>
+      <a href="#certificates">📜 Certificates</a>
+      <a href="#skills">🧠 Skills</a>
+      <a href="#fun">🎉 Fun</a>
+      <a href="#extra">✨ Extra</a>
+      <a href="#contact">📬 Contact</a>
+      <button id="toggle-theme">🌓</button>
+    </nav>
+  </header>
+<main>
+  <section id="about" class="section fade-in slide-up">
+    <h2>🙋 About Me</h2>
+    <p>
+      Hi! I'm <strong>Mohd Yasir</strong>, a passionate Mechatronics Engineering student at <strong>DSEU Okhla-II</strong> under Delhi Skill and Entrepreneurship University. I'm enthusiastic about blending hardware and software into creative and functional tech solutions.
+    </p>
+    <p>
+      I enjoy programming in Python, building automation projects with Arduino, and learning real-world applications of control systems and PLCs. I completed an industrial internship at <strong>Delhi Transco Limited</strong>, where I learned about power systems and industrial automation.
+    </p>
+    <p>
+      Expected to graduate in <strong>2026</strong>, I’m committed to growing as a multidisciplinary engineer who can innovate across mechanical, electronics, and software domains.
+    </p>
+    <p>
+      Outside of engineering, I love animations, quirky design, and adding playful ideas to technical work. Creativity is my spark ✨
+    </p>
+  </section>
+
+  <section id="why" class="section fade-in slide-up">
+    <h2>🔧 Why Mechatronics?</h2>
+    <p>
+      Mechatronics combines everything I enjoy: logic, creativity, and practical impact. It brings together coding, circuits, machines, and systems into one thrilling discipline.
+    </p>
+    <p>
+      I chose Mechatronics because I didn’t want to limit myself. I wanted to build robots, automate homes, solve problems, and dream in both wires and logic!
+    </p>
+    <p>
+      Mechatronics is the art of engineering for the curious mind. It’s where code meets the physical world, and where I find my purpose.
+    </p>
+  </section>
+
+  <section id="projects" class="section fade-in bounce-in parallax">
+    <h2>💼 Projects</h2>
+    <div class="grid">
+      <div class="card wiggle">
+        <img src="images/project1.jpg.jpg" alt="Water Reminder" />
+        <h3>💧 Water Reminder Assistant</h3>
+        <p>A Python script that reminds users to drink water regularly.</p>
+        <ul>
+          <li>Notification popups with sound</li>
+          <li>Customizable time interval</li>
+          <li>Lightweight background script</li>
+        </ul>
+      </div>
+      <div class="card wiggle">
+        <img src="images/project2.jpg.png" alt="Human Follower Robot" />
+        <h3>🚶‍♂️ Human Follower Robot</h3>
+        <p>A robot that follows people using IR sensors and motor logic.</p>
+        <ul>
+          <li>Arduino-based motion control</li>
+          <li>IR sensor integration</li>
+          <li>Obstacle avoidance features</li>
+        </ul>
+      </div>
+      <div class="card wiggle">
+        <img src="images/project3.jpg.jpg" alt="Room Automation" />
+        <h3>💡 Room Light Automation</h3>
+        <p>Automatically turns lights on/off based on motion detection.</p>
+        <ul>
+          <li>IR sensor + relay module</li>
+          <li>Energy-saving design</li>
+          <li>User-friendly and scalable</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ <section id="certificates" class="section fade-in slide-up">
+  <h2>📜 Certificates</h2>
+  <div class="grid">
+    <div class="card pop" onclick="openModal('images/cert1.jpg')">
+      <img src="images/cert1.jpg" alt="Course Certificate" />
+      <h3>🎓 Python programming </h3>
+      <p>Completed a detailed course in Python programming for engineering applications.</p>
+    </div>
+    <div class="card pop" onclick="openModal('images/cert2.jpg')">
+      <img src="images/cert2.jpg" alt="Internship Certificate" />
+      <h3>🏢 Internship at Delhi Transco Ltd</h3>
+      <p>Gained practical experience in control systems, relay logic, and power engineering infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="img-modal" class="modal">
+  <span class="close" onclick="closeModal()">×</span>
+  <img class="modal-content" id="modal-img" />
+  <div class="zoom-controls">
+    <button onclick="zoomIn()">🔍+</button>
+    <button onclick="zoomOut()">🔍−</button>
+  </div>
+</div>
+<!-- Profile Modal -->
+<div id="profile-modal" class="modal">
+  <div class="profile-modal-content">
+    <span class="close" onclick="closeProfileModal()">×</span>
+    <img src="images/profile.jpg.png" alt="Full Profile" id="profile-full-img">
+    <p class="caption">Hi, I'm Mohd Yasir — a creative Mechatronics Engineer in the making 🚀</p>
+  </div>
+</div>
+
+
+
+  <section id="skills" class="section fade-in slide-up">
+    <h2>🧠 Skills</h2>
+    <ul class="skills">
+      <li>🐍 Python</li>
+      <li>🛠️ Arduino</li>
+      <li>⚙️ PLC Programming</li>
+      <li>Digital Signal Processing</li>
+      <li>📊 Control Systems</li>
+      <li>🎮 Creative Problem Solving</li>
+      <li>📐 Circuit Design</li>
+      <li>🔋 Battery Management Basics</li>
+      <li>🔧 Troubleshooting</li>
+    </ul>
+  </section>
+
+  <section id="fun" class="section fade-in slide-up">
+    <h2>🎉 Fun Facts About Me</h2>
+    <p>🎮 I love building mini-games in Python during free time.</p>
+    <p>🎨 I enjoy combining code with art to make animated designs and interfaces.</p>
+    <p>🧩 I’m a puzzle and riddle enthusiast — great for logic and fun!</p>
+    <p>🤖 I name my robots (and treat them like teammates 🤓).</p>
+  </section>
+
+  <section id="extra" class="section fade-in slide-up">
+    <h2>✨ Something Extra!</h2>
+    <p>🌟 I dream of building a smart AI tutor for engineering students — accessible, multilingual, and interactive.</p>
+    <p>👥 I actively help peers understand programming and robotics concepts through workshops and study groups.</p>
+    <p>🌱 I believe in tech that empowers and sustains — joyful, meaningful, and green.</p>
+  </section>
+
+  <section id="contact" class="section fade-in bounce-in">
+    <h2>📬 Contact Me</h2>
+    <p>Let’s create something brilliant together!</p>
+    <p>Email: <a href="mailto:yasit22900@gmail.com">yasit22900@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919953911757">+91 9953911757</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mohd-yasir-9aa59b275" target="_blank">linkedin.com/in/mohd-yasir</a></p>
+  </section>
+</main>
+<footer>
+    <p>© 2025 Mohd Yasir. Designed with ❤️ + creativity. Keep building. Keep smiling.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

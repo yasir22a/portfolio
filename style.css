@@ -1,0 +1,560 @@
+/* Reset and basics */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General body styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: whitesmoke;
+  color: #333;
+  scroll-behavior: smooth;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar a,
+.dark-mode .btn {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.dark-mode .quote {
+  color: #f8f8f8;
+}
+
+/* Quote styling fix */
+.quote {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Floating background */
+.floating-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at 30% 30%, #ffe29f, transparent),
+              radial-gradient(circle at 70% 70%, #ffa69e, transparent);
+  opacity: 0.2;
+  z-index: 0;
+  animation: floatBg 20s linear infinite;
+}
+
+@keyframes floatBg {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(40px, -30px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Header */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #ffecd2, #4185b6);
+  position: relative;
+  z-index: 1;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid white;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.title {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.quote {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  z-index: 2;
+  position: relative;
+}
+
+/* Cursor */
+.cursor {
+  color: #ff7f50;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar a, .btn {
+  background: #ff7f50;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a:hover, .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Sections */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #ff7f50;
+}
+
+/* Grid and Cards */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Skills */
+.skills {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills li {
+  background: hsl(195, 88%, 73%);
+  margin: 0.4rem;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background: #71c1ff;
+  color: #333;
+}
+
+/* Animations on scroll */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bounce-in {
+  animation: bounce-in 1s ease forwards;
+}
+@keyframes bounce-in {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Toggle button */
+#toggle-theme {
+  background: #fff;
+  border: 2px solid #50ffc8;
+  color: #ff7f50;
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+/* Creative Download CV Button */
+.download-btn {
+  display: inline-block;
+  background: rgba(80, 49, 147, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(0, 18, 212, 0.5);
+  color: #005fd4;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 300%;
+  background: linear-gradient(120deg, #3c00d4, #2196f3, #04d400);
+  animation: shine 4s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.download-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.download-btn:hover {
+  color: rgb(255, 255, 255);
+  background: rgba(0, 188, 212, 0.15);
+  border-color: #d400b1;
+  box-shadow: 0 0 25px rgba(0, 212, 11, 0.6);
+  transform: scale(1.05);
+}
+
+@keyframes shine {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+.dark-mode .navbar a,
+.dark-mode .btn {
+  background: #444;
+  color: white;
+}
+
+/* Sparkles */
+.sparkle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: gold;
+  border-radius: 50%;
+  animation: sparkle 0.8s ease-out forwards;
+  pointer-events: none;
+}
+@keyframes sparkle {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(3); opacity: 0; }
+}
+
+/* Emoji Cloud */
+.emoji-cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  padding: 1rem;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 1;
+}
+/* Dark mode fixes for cards and text blocks */
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+}
+
+.dark-mode .skills li {
+  background: #333;
+  color: #f0f0f0;
+}
+
+.dark-mode .section {
+  color: #f0f0f0;
+}
+
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li {
+  color: #f0f0f0;
+}
+
+/* Image modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  animation: zoom 0.4s;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+.zoom-controls {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.zoom-controls button {
+  background: #ffffff33;
+  color: white;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.zoom-controls button:hover {
+  background: #ffffff66;
+  transform: scale(1.1);
+}
+/* Profile photo modal */
+#profile-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  animation: fadeIn 0.4s;
+}
+
+.profile-modal-content {
+  margin: 5% auto;
+  padding: 20px;
+  background: #fff;
+  width: fit-content;
+  max-width: 90%;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.5s ease;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+#profile-full-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #00bcd4;
+  box-shadow: 0 0 30px #00bcd4aa;
+  transition: transform 0.4s ease;
+}
+
+#profile-full-img:hover {
+  transform: scale(1.05);
+}
+
+.profile-modal-content .caption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Profile Photo Glow + Animation */
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #00d451;
+  box-shadow: 0 0 20px #00bcd4;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatIn 1.2s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0f7a88aa;
+}
+
+/* Floating Glow Pulse */
+.animated-glow::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 184px;
+  height: 184px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #3349adaa 10%, transparent 70%);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.6;
+  }
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close button for profile modal */
+#profile-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999; /* High z-index to stay on top */
+  opacity: 1 !important; /* Always fully visible */
+  background-color: rgba(0, 0, 0, 0.4); /* optional background */
+  padding: 0 12px;
+  border-radius: 50%;
+  line-height: 1;
+  transition: transform 0.2s, background 0.3s;
+}
+
+#profile-modal .close:hover {
+  background-color: rgba(255, 64, 129, 0.6);
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  #profile-modal .close {
+    font-size: 2rem;
+    top: 5px;
+    right: 10px;
+  }
+}
